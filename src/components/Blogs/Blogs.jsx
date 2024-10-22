@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Blogs = () => {
 
-    const {blogs, setBlogs} = useState([])
+    const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
         fetch('blogs.json')
@@ -12,8 +12,8 @@ const Blogs = () => {
     })
 
     return (
-        <div>
-            
+        <div className="md:w-2/3">
+            <h1 className="text-4xl">Blogs: {blogs.length}</h1>
         </div>
     );
 };
