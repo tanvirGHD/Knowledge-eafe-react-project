@@ -23,7 +23,13 @@ const Blog = ({blog, handleAddBookMarks}) => {
                 </div>
                 <div className="flex items-center gap-2">
                     <span>{`0${reading_time} min read`}</span>
-                    <button onClick={handleAddBookMarks} className="bg-white rounded-full p-2"><FaBookmark></FaBookmark></button>
+
+                    <button 
+                    onClick={() => handleAddBookMarks(blog)} 
+                    className="bg-white rounded-full p-2">
+                    <FaBookmark></FaBookmark>
+                    </button>
+
                 </div>
             </div>
             <h2 className="md:text-4xl text-2xl font-bold my-3">{title}</h2>
@@ -37,7 +43,8 @@ const Blog = ({blog, handleAddBookMarks}) => {
 };
 
 Blog.propTypes= {
-    blog: PropTypes.object.isRequired
+    blog: PropTypes.object.isRequired,
+    handleAddBookMarks: PropTypes.func
 }
 
 export default Blog;
